@@ -8,7 +8,7 @@ plotdat$Date<-as.Date(plotdat$Date,format="%d/%m/%Y")
 febdat<-plotdat[(plotdat$Date=="2007-02-01"|plotdat$Date=="2007-02-02"),]
 
 # format properly and create DateTime variable
-febdat$Global_active_power<-as.numeric(febdat$Global_active_power)
+febdat$Global_active_power<-as.numeric(as.character(febdat$Global_active_power))
 febdat$DateTime<-as.POSIXct(paste(febdat$Date,febdat$Time))
 
 # plot

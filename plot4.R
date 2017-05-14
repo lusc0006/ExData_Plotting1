@@ -8,12 +8,12 @@ plotdat$Date<-as.Date(plotdat$Date,format="%d/%m/%Y")
 febdat<-plotdat[(plotdat$Date=="2007-02-01"|plotdat$Date=="2007-02-02"),]
 
 # format properly and create DateTime variable
-febdat$Sub_metering_1<-as.numeric(febdat$Sub_metering_1)
-febdat$Sub_metering_2<-as.numeric(febdat$Sub_metering_2)
-febdat$Sub_metering_3<-as.numeric(febdat$Sub_metering_3)
-febdat$Global_active_power<-as.numeric(febdat$Global_active_power)
-febdat$Voltage<-as.numeric(febdat$Voltage)
-febdat$Global_reactive_power<-as.numeric(febdat$Global_reactive_power)
+febdat$Sub_metering_1<-as.numeric(as.character(febdat$Sub_metering_1))
+febdat$Sub_metering_2<-as.numeric(as.character(febdat$Sub_metering_2))
+febdat$Sub_metering_3<-as.numeric(as.character(febdat$Sub_metering_3))
+febdat$Global_active_power<-as.numeric(as.character(febdat$Global_active_power))
+febdat$Voltage<-as.numeric(as.character(febdat$Voltage))
+febdat$Global_reactive_power<-as.numeric(as.character(febdat$Global_reactive_power))
 febdat$DateTime<-as.POSIXct(paste(febdat$Date,febdat$Time))
 
 

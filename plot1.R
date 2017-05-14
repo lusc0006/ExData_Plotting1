@@ -12,7 +12,8 @@ plotdat$Date<-as.Date(plotdat$Date,format="%d/%m/%Y")
 febdat<-plotdat[(plotdat$Date=="2007-02-01"|plotdat$Date=="2007-02-02"),]
 
 # format data
-febdat$Global_active_power<-as.numeric(febdat$Global_active_power)
+febdat$Global_active_power<-as.numeric(as.character(febdat$Global_active_power))
+
 
 # plot
 hist(febdat$Global_active_power,col="red",xlab="Global Active Power (kilowatts)",main=paste("Global Active Power"))
